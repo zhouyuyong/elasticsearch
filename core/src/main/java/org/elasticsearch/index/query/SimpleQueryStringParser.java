@@ -232,7 +232,7 @@ public class SimpleQueryStringParser implements QueryParser {
         }
 
         if (minimumShouldMatch != null && query instanceof BooleanQuery) {
-            Queries.applyMinimumShouldMatch((BooleanQuery) query, minimumShouldMatch);
+            query = Queries.applyMinimumShouldMatch((BooleanQuery) query, minimumShouldMatch);
         }
 
         if (query != null) {
