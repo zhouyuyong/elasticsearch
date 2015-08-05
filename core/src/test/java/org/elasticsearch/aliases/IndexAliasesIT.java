@@ -959,7 +959,6 @@ public class IndexAliasesIT extends ESIntegTestCase {
     }
 
     @Test
-    @AwaitsFix(bugUrl="https://issues.apache.org/jira/browse/LUCENE-6718")
     public void testAliasesFilterWithHasChildQuery() throws Exception {
         assertAcked(prepareCreate("my-index")
                         .addMapping("parent")
