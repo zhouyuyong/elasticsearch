@@ -1,10 +1,7 @@
-[[indices-templates]]
-== Index Templates
+[[索引模板]]
+== 索引模板
 
-Index templates allow to define templates that will automatically be
-applied to new indices created. The templates include both settings and
-mappings, and a simple pattern template that controls if the template
-will be applied to the index created. For example:
+定义索引模板将在创建新的索引时被自动引用，模板包括设置（settings）和映射（mappings）。一个简单的模式模板可以控制是否在索引被创建时引用这个模板。比如：
 
 [source,js]
 --------------------------------------------------
@@ -23,11 +20,9 @@ curl -XPUT localhost:9200/_template/template_1 -d '
 '
 --------------------------------------------------
 
-Defines a template named template_1, with a template pattern of `te*`.
-The settings and mappings will be applied to any index name that matches
-the `te*` template.
+定义了一个名为template_1的模板，包含一个模板模式`te*`。设置和映射将被应用到所有的名字匹配`te*`的索引。
 
-It is also possible to include aliases in an index template as follows:
+在一个索引模板中可能回包含别名如下：
 
 [source,js]
 --------------------------------------------------
@@ -51,8 +46,7 @@ curl -XPUT localhost:9200/_template/template_1 -d '
 '
 --------------------------------------------------
 
-<1> the `{index}` placeholder within the alias name will be replaced with the
-actual index name that the template gets applied to during index creation.
+<1>  当索引创建时，在alias名中的`{index}` 占位符将被模板获取到的实际索引名替换。
 
 [float]
 [[delete]]
